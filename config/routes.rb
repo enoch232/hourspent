@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :languages
+  resources :languages do
+    get 'increase' => 'languages#increase'
+    get 'decrease' => 'languages#decrease'
+  end
   root 'languages#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

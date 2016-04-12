@@ -1,0 +1,27 @@
+<div class ="jumbotron">
+	<h1 style ="text-align:center">New</h1>
+</div>
+<div style = "text-align:center">
+	<%= form_for(:language, url: languages_path) do |f| %>
+		<%= f.label "Language Name" %>
+		<br>
+		<br>
+		<div style = "width:30rem;text-align:center;display:inline-block">
+			<%= f.text_field :name, class: "form-control" %>
+		</div>
+		<br>
+		<br>
+		<%= f.label "Hours Spent" %>
+		<br>
+		<br>
+		<div style = "width:30rem;text-align:center;display:inline-block">
+			<%= f.text_field :hours, class: "form-control" %>
+		</div>
+		<br>
+		<br>
+		<%= f.submit "New Language", class: "btn btn-default" %>
+		<br>
+	<% end %> 
+	<br>
+	<%= link_to "Back", root_path, class: "btn btn-default" %>
+</div>

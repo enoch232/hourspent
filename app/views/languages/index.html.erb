@@ -1,18 +1,24 @@
-<div class ="jumbotron"><h1 style = "text-align:center">My Programming Hours Distribution</h1></div>
+<div class ="jumbotron">
+	<h1 style = "text-align:center">My Programming Hours Distribution</h1>
+	<div style = "text-align:center">
+		<%= link_to "New", new_language_path, class: "btn btn-default" %>
+	</div>
+</div>
+
 <div style = "text-align:right">
 	<% @languages.each do |language| %>
 		<div>
 			<div style = "text-align:center;display:inline-block">
 				<div style = "float:left;">
+					<%= link_to language_increase_path(language) do %> 
 						<span class = "glyphicon glyphicon-arrow-up" style = "font-size:6rem" />
-				</div>
-				<br />
-				<div style = "height:1rem">
-
+					<% end %>
 				</div>
 				<br />
 				<div style = "float:left;">
+					<%= link_to language_decrease_path(language) do %>
 						<span class = "glyphicon glyphicon-arrow-down" style = "font-size:6rem" />
+					<% end %>
 				</div>
 			</div>
 			<div style = "box-shadow:5px 5px 5px 5px black;background-color:#FF8A65;width:80%;height:200px;display:inline-block;margin:1rem;border-radius:2rem">
