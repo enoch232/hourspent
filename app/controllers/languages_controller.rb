@@ -17,17 +17,27 @@ class LanguagesController < ApplicationController
 	def increase
 		@language = Language.find(params[:language_id])
 		@language.hours = @language.hours + 1
-		@language.save
-		redirect_to root_path
+		if @language.save
+			respond_to do |format|
+				format.html{redirect_to root_path}
+				format.js
+			end
+		else
+			redirect_to :index
+		end
 	end
 	def decrease
 		@language = Language.find(params[:language_id])
 		if @language.hours > 0
 			@language.hours = @language.hours - 1
-			@language.save
-			redirect_to root_path
+			if @language.save
+				respond_to do |format|
+					format.html{redirect_to root_path}
+					format.js
+				end
+			end
 		else
-			redirect_to root_path
+			redirect_to :index
 		end
 
 		

@@ -10,13 +10,13 @@
 		<div>
 			<div style = "text-align:center;display:inline-block">
 				<div style = "float:left;">
-					<%= link_to language_increase_path(language) do %> 
+					<%= link_to language_increase_path(language), remote:true do %> 
 						<span class = "glyphicon glyphicon-arrow-up" style = "font-size:6rem" />
 					<% end %>
 				</div>
 				<br />
 				<div style = "float:left;">
-					<%= link_to language_decrease_path(language) do %>
+					<%= link_to language_decrease_path(language), remote: true do %>
 						<span class = "glyphicon glyphicon-arrow-down" style = "font-size:6rem" />
 					<% end %>
 				</div>
@@ -27,7 +27,7 @@
 					<span style ="font-size:4rem;color:#212121"><%= language.name %></span>
 				</div>
 				<div style = "width:100%;text-align:center" >
-					<span style = "font-size:3rem;color:#212121"><span class = "label label-info" style = "color:black"><%= language.hours %></span> hours spent</span>
+					<%= render 'language', language: language %>
 				</div>
 
 			</div>
